@@ -3,7 +3,7 @@ COVID19 County Severity Dashboard - California
 
 R Markdown script to create a flexdashboard with geographic data as well as charts tracking totals and per population rates for both cases and deaths, aggregated by county.
 
-Three tabs for 1). 14-day case rate with map indicating severity by county, 2). total/rate cases, and 3). total/rate deaths.
+Three tabs for 1). 14-day case rate with map indicating severity by county, 2). total & rate cases, and 3). total & rate deaths.
 
 Script combines 3 separate data sources:
   COVID Data: NYT - "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
