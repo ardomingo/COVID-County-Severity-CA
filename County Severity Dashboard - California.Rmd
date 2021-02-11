@@ -34,7 +34,7 @@ library(utils)
 
 #Download current data
 NYT_Cnty <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv", header = TRUE)
-NYT_State <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", header = TRUE)
+# NYT_State <- read.csv("https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv", header = TRUE)
 
 
 #Filter for CA and convert dates
@@ -87,46 +87,16 @@ hotspot_comp_tots14 <- mutate(hotspot_comp1, caseslast14 = cases.x - cases.y,
 
 
 
-#Set up map
 
 
-#Download file from GH repo
-# shape_github <- "https://github.com/ardomingo/COVID-County-Severity-CA/blob/main/CA_Counties_TIGER2016.shp?raw=true"
-#  
-
-# 
-# library(curl)
-# github_test <- curl("https://github.com/ardomingo/COVID-County-Severity-CA/blob/main/CA_Counties_TIGER2016.shp")
-# 
-# 
-# CA_areas1 <- st_read(readLines(github_test)) %>%
-#   st_transform("+proj=longlat +datum=WGS84")
-
-# CA_areas1 <- st_read(github_test) %>%
-#   st_transform("+proj=longlat +datum=WGS84")
 
 ##################################
 
 # CA_areas1 <- st_read("C:/Users/andre/OneDrive/01. Projects/CoViD-19/CA_Counties/CA_Counties_TIGER2016.shp") %>%
 #   st_transform("+proj=longlat +datum=WGS84")
-
-
 #########################################################
 
-
-# 
-# download.file("https://data.ca.gov/dataset/e212e397-1277-4df3-8c22-40721b095f33/resource/b0007416-a325-4777-9295-368ea6b710e6/download/ca-county-boundaries.zip",
-#               "CA_Shapes.zip")
-# 
-# CA1 <- unzip("CA_Shapes.zip")
-# CA_areas1 <- readOGR(dsn = path.expand("~CA_Shapes/CA_Counties"), layer = "CA_Counties_TIGER2016" )
-# 
-# 
-# CA_areas1 <- st_read("~CA_Shapes/CA_Counties.CA_Counties_TIGER2016.shp") %>% 
-#   st_transform("+proj=longlat +datum=WGS84")
-
-
-
+#Set up map
 
 download.file("https://data.ca.gov/dataset/e212e397-1277-4df3-8c22-40721b095f33/resource/b0007416-a325-4777-9295-368ea6b710e6/download/ca-county-boundaries.zip",
               "CA_Shapes.zip")
@@ -138,9 +108,9 @@ CA1 <- unzip("CA_Shapes.zip")
 CA_areas1 <- st_read(CA1[6]) %>% 
   st_transform("+proj=longlat +datum=WGS84")
 
-###############################################
 
 
+#Find +/-
 hotspot_map_data <- merge(hotspot_comp_calc, hotspot_comp_tots14, by = "county")
 
 
