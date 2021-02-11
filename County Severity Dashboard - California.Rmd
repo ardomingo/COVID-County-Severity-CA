@@ -89,13 +89,6 @@ hotspot_comp_tots14 <- mutate(hotspot_comp1, caseslast14 = cases.x - cases.y,
 
 
 
-
-##################################
-
-# CA_areas1 <- st_read("C:/Users/andre/OneDrive/01. Projects/CoViD-19/CA_Counties/CA_Counties_TIGER2016.shp") %>%
-#   st_transform("+proj=longlat +datum=WGS84")
-#########################################################
-
 #Set up map
 
 download.file("https://data.ca.gov/dataset/e212e397-1277-4df3-8c22-40721b095f33/resource/b0007416-a325-4777-9295-368ea6b710e6/download/ca-county-boundaries.zip",
@@ -347,4 +340,4 @@ ggplotly(bar_deaths1k, tooltip = c("County", "text"))
 
 ```
 
-
+#################FIN#####################
